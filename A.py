@@ -1,5 +1,6 @@
 import socket
 import pyaes
+import time
 
 portKM = 12345
 portB = 12346
@@ -27,6 +28,7 @@ enc_type = input("ECB sau CBC\n")
 
 # trimite modul de operare la B
 b.send(bytes(enc_type, 'utf-8'))
+time.sleep(1)
 # trimite cheia la B
 b.send(bytes(encrypted_key))
 
